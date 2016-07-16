@@ -39,6 +39,10 @@ function some_hex { # count
     pick_some "0123456789abcdef" $1
 }
 
+function some_hexaf { # count
+    pick_some "abcdef" $1
+}
+
 function some_text { # text
     printf "%s" "$1"
     needs_new_line=true
@@ -51,9 +55,10 @@ function new_line {
 
 function render {
     OPTIND=1
-    while getopts "h:d:l:u:a:c:n" opt; do
+    while getopts "h:f:d:l:u:a:c:n" opt; do
         case "$opt" in
             'h') some_hex "$OPTARG";;
+            'f') some_hexaf "$OPTARG";;
             'd') some_digit "$OPTARG";;
             'l') some_lower "$OPTARG";;
             'u') some_upper "$OPTARG";;
@@ -69,7 +74,7 @@ function render {
 }
 
 if [ -z $1 ]; then
-    render -l1 -h6 -l1
+    render -f1 -h7
 else
     render $@
 fi

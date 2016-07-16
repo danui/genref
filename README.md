@@ -16,4 +16,7 @@ Markdown link identifiers.
 [genref.sh][caa32b6] to where you put your executable scripts and
 making it executable.
 
+Alternatively, the [Makefile](./Makefile) provides some installation
+options.  Run `make` to list them.
+
 [caa32b6]: ./src/genref.sh
