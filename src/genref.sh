@@ -73,7 +73,9 @@ function render {
     fi
 }
 
-if [ -z $1 ]; then
+if [ "-v" == "$1" ]; then
+    echo "genref v1.0.0";
+elif [ -z $1 ]; then
     render -f1 -h7
 else
     render $@
